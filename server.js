@@ -1,6 +1,7 @@
 // import modules
 
 import express from 'express'
+import { pies } from './data/pie-data.js'
 
 // create Express app
 
@@ -22,6 +23,12 @@ app.get('/', function(req, res) {
 
 app.get('/home', function(req, res) {
   res.render('home')
+})
+
+app.get('/pies', function(req, res) {
+  res.render('pies/index', {
+    pies: pies
+  })
 })
 
 // tell the app to listen on port 3000
